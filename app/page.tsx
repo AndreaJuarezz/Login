@@ -21,12 +21,15 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-96">
-        <img
+        {/* Uso correcto de next/image */}
+        <Image
           src="https://th.bing.com/th/id/R.f28b10bc4643006cbf7d30c43ca7aa21?rik=Psasu37qtY%2f0Qw&pid=ImgRaw&r=0"
           alt="Login"
+          width={384} // Asegúrate de definir width y height
+          height={160}
           className="w-full h-40 object-cover rounded-md mb-4"
-
-/>
+          unoptimized // Se usa para imágenes externas que Next.js no puede optimizar
+        />
 
         <h2 className="text-2xl font-semibold text-center mb-4">Iniciar Sesión</h2>
 
