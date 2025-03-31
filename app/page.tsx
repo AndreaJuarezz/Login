@@ -3,11 +3,16 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
+interface LoginFormValues {
+  username: string;
+  password: string;
+}
+
 export default function LoginPage() {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm<LoginFormValues>();
   const router = useRouter();
 
-  const onSubmit = (data: { username: string; password: string }) => {
+  const onSubmit = (data: LoginFormValues) => {
     if (data.username === "admin" && data.password === "1234") {
       router.push("/dashboard"); // Redirige a la página de bienvenida
     } else {
