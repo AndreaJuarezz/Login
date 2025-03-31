@@ -1,8 +1,5 @@
 "use client";
 import Image from "next/image";
-
-
-import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
@@ -14,7 +11,7 @@ export default function LoginPage() {
     if (data.username === "admin" && data.password === "1234") {
       router.push("/dashboard"); // Redirige a la página de bienvenida
     } else {
-      window.alert("⚠️ Acceso inválido, credenciales erróneas"); // Muestra un alert dialog
+      window.alert("⚠️ Usuario o contraseña incorrectos"); // Muestra el alert dialog en caso de error
     }
   };
 
@@ -25,7 +22,7 @@ export default function LoginPage() {
         <Image
           src="https://th.bing.com/th/id/R.f28b10bc4643006cbf7d30c43ca7aa21?rik=Psasu37qtY%2f0Qw&pid=ImgRaw&r=0"
           alt="Login"
-          width={384} // Asegúrate de definir width y height
+          width={384}
           height={160}
           className="w-full h-40 object-cover rounded-md mb-4"
           unoptimized // Se usa para imágenes externas que Next.js no puede optimizar
@@ -57,5 +54,3 @@ export default function LoginPage() {
     </div>
   );
 }
-
-
